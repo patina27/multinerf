@@ -51,6 +51,7 @@ class Config:
   batch_size: int = 16384  # The number of rays/pixels in each batch.
   patch_size: int = 1  # Resolution of patches sampled for training batches.
   factor: int = 0  # The downsample factor of images, 0 for no downsampling.
+  long_side_size: int = 1000 # downsample to long_side_size x ratio * long_side_size if factor == -1
   load_alphabetical: bool = True  # Load images in COLMAP vs alphabetical
   # ordering (affects heldout test set).
   forward_facing: bool = False  # Set to True for forward-facing LLFF captures.
@@ -58,6 +59,7 @@ class Config:
   llffhold: int = 8  # Use every Nth image for the test set. Used only by LLFF.
   # If true, use all input images for training.
   llff_use_all_images_for_training: bool = False
+  random_split: bool = False  # If True, split the dataset randomly.
   use_tiffs: bool = False  # If True, use 32-bit TIFFs. Used only by Blender.
   compute_disp_metrics: bool = False  # If True, load and compute disparity MSE.
   compute_normal_metrics: bool = False  # If True, load and compute normal MAE.
@@ -111,6 +113,8 @@ class Config:
   #   }
   # Any model parameter that isn't specified gets a mult of 0. See the
   # train_weight_l2_* parameters in TensorBoard to know what can be regularized.
+  train_set_split_name: str = 'reflection_only.txt'  # Which dataset split to use.
+  val_set_split_name: str = 'reflection_val.txt'  # Which dataset split to use.
 
   lr_init: float = 0.002  # The initial learning rate.
   lr_final: float = 0.00002  # The final learning rate.

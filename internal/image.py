@@ -77,6 +77,21 @@ def downsample(img, factor):
   img = img.mean((1, 3))
   return img
 
+def downsample_image_np(img_array, target_size):
+    # Get the height and width of the image
+    height, width = img_array.shape[:2]
+
+    # Calculate the ratio to resize
+    ratio = target_size / max(width, height)
+
+    # Calculate new dimensions
+    new_width = int(width * ratio)
+    new_height = int(height * ratio)
+
+    # Resize the image
+    resized_img = cv2.resize(img_array, (new_width, new_height), interpolation=cv2.INTER_AREA)
+
+    return resized_img
 
 def color_correct(img, ref, num_iters=5, eps=0.5 / 255):
   """Warp `img` to match the colors in `ref_img`."""
