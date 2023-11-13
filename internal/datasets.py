@@ -634,7 +634,7 @@ class LLFF(Dataset):
                      for f in image_names]
       images = [utils.load_img(x) for x in image_paths]
       if config.factor == -1:
-        image = lib_image.resize_image_to_long_size(image, config.long_side_size)
+        images = [lib_image.resize_image_to_long_size(image, config.long_side_size) for image in images]
       images = np.stack(images, axis=0) / 255.
       print("Size of Images: " + str(images.shape))
       # EXIF data is usually only present in the original JPEG images.
