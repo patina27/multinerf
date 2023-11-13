@@ -575,7 +575,7 @@ class LLFF(Dataset):
     else:
       # Attempt to load Blender/NGP format if COLMAP data not present.
       pose_data = load_blender_posedata(self.data_dir)
-    image_names, poses, pixtocam, distortion_params, camtype, img_width, img_eight = pose_data
+    image_names, poses, pixtocam, distortion_params, camtype, img_width, img_height = pose_data
     # Set up scaling factor.
     image_dir_suffix = ''
     # Use downsampling factor (unless loading training split for raw dataset,
