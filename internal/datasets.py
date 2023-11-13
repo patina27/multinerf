@@ -584,7 +584,7 @@ class LLFF(Dataset):
                                   self.split == utils.DataSplit.TRAIN):
       image_dir_suffix = f'_{config.factor}'
       factor = config.factor
-    else if config.factor == -1:
+    elif config.factor == -1:
       factor = config.long_side_size / max(width, height)
       print(f'Downsampling images to long side size {config.long_side_size}, factor = {factor}.')
     else:
