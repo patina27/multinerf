@@ -598,7 +598,10 @@ class LLFF(Dataset):
       poses = poses[inds]
 
     # Scale the inverse intrinsics matrix by the image downsampling factor.
+    print(f'Using downsampling factor {factor}.')
+    print(pixtocam)
     pixtocam = pixtocam @ np.diag([factor, factor, 1.])
+    print(pixtocam)
     self.pixtocams = pixtocam.astype(np.float32)
     self.focal = 1. / self.pixtocams[0, 0]
     self.distortion_params = distortion_params
