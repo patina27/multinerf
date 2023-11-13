@@ -114,7 +114,7 @@ class Config:
   # Any model parameter that isn't specified gets a mult of 0. See the
   # train_weight_l2_* parameters in TensorBoard to know what can be regularized.
   train_set_split_name: str = 'reflection_only.txt'  # Which dataset split to use.
-  val_set_split_name: str = 'reflection_val.txt'  # Which dataset split to use.
+  test_set_split_name: str = 'reflection_val.txt'  # Which dataset split to use.
 
   lr_init: float = 0.002  # The initial learning rate.
   lr_final: float = 0.00002  # The final learning rate.
