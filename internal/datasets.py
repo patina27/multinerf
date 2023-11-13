@@ -727,7 +727,7 @@ class LLFF(Dataset):
         # Debugging prints
         print("Loaded", len(train_set_images), "train set images. Examples:", train_set_images[:5])
         print("Loaded", len(test_set_images), "test set images. Examples:", test_set_images[:5])
-
+        print(images_names[:5])
         train_indices = [index for index, image_name in enumerate(image_names) if image_name in train_set_images]
         test_indices = [index for index, image_name in enumerate(image_names) if image_name in test_set_images]
 
