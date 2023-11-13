@@ -77,7 +77,7 @@ def downsample(img, factor):
   img = img.mean((1, 3))
   return img
 
-def downsample_image_np(img_array, target_size):
+def resize_image_to_long_size(img_array, target_size):
     # Get the height and width of the image
     height, width = img_array.shape[:2]
 
