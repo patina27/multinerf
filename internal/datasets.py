@@ -525,7 +525,7 @@ class Blender(Dataset):
         image = utils.load_img(fprefix + f)
         if config.factor > 1:
           image = lib_image.downsample(image, config.factor)
-        else if config.factor == -1:
+        elif config.factor == -1:
           image = lib_image.resize_image_to_long_size(image, config.long_side_size)
         return image
 
