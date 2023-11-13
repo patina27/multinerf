@@ -727,9 +727,10 @@ class LLFF(Dataset):
         # Debugging prints
         print("Loaded", len(train_set_images), "train set images. Examples:", train_set_images[:5])
         print("Loaded", len(test_set_images), "test set images. Examples:", test_set_images[:5])
-        print(image_names[:5])
-        train_indices = [index for index, image_name in enumerate(image_names) if image_name in train_set_images]
-        test_indices = [index for index, image_name in enumerate(image_names) if image_name in test_set_images]
+        image_names_no_ext = [os.path.splitext(x)[0] for x in image_names]
+        print("Image names no ext count:", len(image_names_no_ext), "Examples:", image_names_no_ext[:5])
+        train_indices = [index for index, image_name in enumerate(image_names_no_ext) if image_name in train_set_images]
+        test_indices = [index for index, image_name in enumerate(image_names_no_ext) if image_name in test_set_images]
 
         # More debugging prints
         print("Train indices count:", len(train_indices), "Examples:", train_indices[:5])
