@@ -21,6 +21,7 @@ import dm_pix
 import jax
 import jax.numpy as jnp
 import numpy as np
+import cv2
 
 _Array = Union[np.ndarray, jnp.ndarray]
 
