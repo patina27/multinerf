@@ -585,7 +585,7 @@ class LLFF(Dataset):
       image_dir_suffix = f'_{config.factor}'
       factor = config.factor
     elif config.factor == -1:
-      factor = config.long_side_size / max(img_width, img_height)
+      factor = max(img_width, img_height) / config.long_side_size
       print(f'Downsampling images to long side size {config.long_side_size}, factor = {factor}.')
     else:
       factor = 1
